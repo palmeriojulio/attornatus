@@ -1,9 +1,12 @@
 package br.com.attornatus.pessoa.domain;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Pessoa {
+public class Pessoa implements Serializable{
 
+	private static final long serialVersionUID = 1L;
+	
 	private long id;
 	private String nome;
 	private LocalDate dataNascincimento;
