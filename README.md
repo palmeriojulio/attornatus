@@ -38,10 +38,10 @@ Uma Pessoa deve ter os seguintes campos:
 - Nome
 - Data de nascimento
 - Endereço:
-	- Logradouro
-	- CEP
-	- Número
-	- Cidade
+    - Logradouro 
+    - CEP
+    - Número
+    - Cidade
 
 ## Requisitos  
 - Todas as respostas da API devem ser JSON  
