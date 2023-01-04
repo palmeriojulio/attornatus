@@ -1,19 +1,50 @@
 package br.com.attornatus.pessoa.domain;
 
-public class Endereco {
+import java.io.Serializable;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+
+@Entity
+public class Endereco implements Serializable{
 	
+	private static final long serialVersionUID = 1L;
+	
+	@Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
+	
+	@Column
 	private String logradouro;
+	
+	@Column
 	private String cep;
+	
+	@Column
 	private String numero;
+	
+	@Column
 	private String cidade;
+	
+	@Column
 	private String enderecoPrincipal;
+	
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "id_pessoa", referencedColumnName = "id")
+	private Pessoa pessoa;
 	
 	public Endereco() {
 		super();
 	}
 
-	public Endereco(long id, String logradouro, String cep, String numero, String cidade, String enderecoPrincipal) {
+	public Endereco(long id, String logradouro, String cep, String numero, String cidade, String enderecoPrincipal,
+			Pessoa pessoa) {
 		super();
 		this.id = id;
 		this.logradouro = logradouro;
@@ -21,6 +52,7 @@ public class Endereco {
 		this.numero = numero;
 		this.cidade = cidade;
 		this.enderecoPrincipal = enderecoPrincipal;
+		this.pessoa = pessoa;
 	}
 
 	public long getId() {
@@ -69,6 +101,14 @@ public class Endereco {
 
 	public void setEnderecoPrincipal(String enderecoPrincipal) {
 		this.enderecoPrincipal = enderecoPrincipal;
-	}	
+	}
 
+	public Pessoa getPessoa() {
+		return pessoa;
+	}
+
+	public void setPessoa(Pessoa pessoa) {
+		this.pessoa = pessoa;
+	}
+	
 }
