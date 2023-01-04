@@ -28,18 +28,18 @@ public class Pessoa implements Serializable{
 	private LocalDate dataNascincimento;
 	
 	@OneToMany(cascade = CascadeType.ALL)
-	private List<Endereco> endereco;
+	private List<Endereco> enderecos;
 
 	public Pessoa() {
 		super();		
 	}
 
-	public Pessoa(long id, String nome, LocalDate dataNascincimento, List<Endereco> endereco) {
+	public Pessoa(long id, String nome, LocalDate dataNascincimento, List<Endereco> enderecos) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.dataNascincimento = dataNascincimento;
-		this.endereco = endereco;
+		this.enderecos = enderecos;
 	}
 
 	public long getId() {
@@ -66,12 +66,12 @@ public class Pessoa implements Serializable{
 		this.dataNascincimento = dataNascincimento;
 	}
 
-	public List<Endereco> getEndereco() {
-		return endereco;
+	public List<Endereco> getEnderecos() {
+		return enderecos;
 	}
 
-	public void setEndereco(List<Endereco> endereco) {
-		this.endereco = endereco;
+	public void setEnderecos(List<Endereco> enderecos) {
+		this.enderecos = enderecos;
 	}
 
 }
