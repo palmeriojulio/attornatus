@@ -19,7 +19,7 @@ public class Pessoa implements Serializable{
 	
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
+	private Long id;
 	
 	@Column
 	private String nome;
@@ -34,7 +34,7 @@ public class Pessoa implements Serializable{
 		super();		
 	}
 
-	public Pessoa(long id, String nome, LocalDate dataNascincimento, List<Endereco> enderecos) {
+	public Pessoa(Long id, String nome, LocalDate dataNascincimento, List<Endereco> enderecos) {
 		super();
 		this.id = id;
 		this.nome = nome;
@@ -42,11 +42,11 @@ public class Pessoa implements Serializable{
 		this.enderecos = enderecos;
 	}
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

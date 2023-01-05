@@ -14,7 +14,7 @@ import br.com.attornatus.pessoa.domain.Pessoa;
  */
 public class PessoaDto {
 
-	private long id;
+	private Long id;
 	private String nome;
 	private LocalDate dataNascincimento;
 	private List<EnderecoDto> enderecos;
@@ -23,7 +23,7 @@ public class PessoaDto {
 		super();
 	}
 
-	public PessoaDto(long id, String nome, LocalDate dataNascincimento, List<EnderecoDto> enderecos) {
+	public PessoaDto(Long id, String nome, LocalDate dataNascincimento, List<EnderecoDto> enderecos) {
 		super();
 		this.id = id;
 		this.nome = nome;
@@ -31,11 +31,11 @@ public class PessoaDto {
 		this.enderecos = enderecos;
 	}
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

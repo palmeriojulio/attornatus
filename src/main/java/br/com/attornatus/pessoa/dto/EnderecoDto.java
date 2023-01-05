@@ -14,7 +14,7 @@ import br.com.attornatus.pessoa.domain.Endereco;
  */
 public class EnderecoDto {
 
-	private long id;
+	private Long id;
 	private String logradouro;
 	private String cep;
 	private String numero;
@@ -26,7 +26,7 @@ public class EnderecoDto {
 		super();
 	}
 
-	public EnderecoDto(long id, String logradouro, String cep, String numero, String cidade, String enderecoPrincipal,
+	public EnderecoDto(Long id, String logradouro, String cep, String numero, String cidade, String enderecoPrincipal,
 			PessoaDto pessoa) {
 		super();
 		this.id = id;
@@ -38,11 +38,11 @@ public class EnderecoDto {
 		this.pessoa = pessoa;
 	}
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
