@@ -8,7 +8,6 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
 @Entity
@@ -35,9 +34,9 @@ public class Endereco implements Serializable{
 	@Column
 	private String enderecoPrincipal;
 	
-	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "id_pessoa", referencedColumnName = "id")
-	private Pessoa pessoa;
+	//@ManyToOne(fetch = FetchType.EAGER)
+	//@JoinColumn(name = "id_pessoa", referencedColumnName = "id")
+	//private Pessoa pessoa;
 	
 	public Endereco() {
 		super();
@@ -99,14 +98,6 @@ public class Endereco implements Serializable{
 
 	public void setEnderecoPrincipal(String enderecoPrincipal) {
 		this.enderecoPrincipal = enderecoPrincipal;
-	}
-
-	public Pessoa getPessoa() {
-		return pessoa;
-	}
-
-	public void setPessoa(Pessoa pessoa) {
-		this.pessoa = pessoa;
 	}
 	
 }

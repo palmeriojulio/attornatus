@@ -8,8 +8,8 @@ import br.com.attornatus.pessoa.domain.Endereco;
 /**
  * @author palmerio
  * 
- *         Essa classe ultiliza o padrão de projetos Data Transfer Object (DTO)
- *         o transporte de dados entre diferentes componentes.
+ * Essa classe ultiliza o padrão de projetos Data Transfer Object (DTO)
+ * o transporte de dados entre diferentes componentes.
  * 
  */
 public class EnderecoDto {
@@ -82,8 +82,13 @@ public class EnderecoDto {
 	public void setEnderecoPrincipal(String enderecoPrincipal) {
 		this.enderecoPrincipal = enderecoPrincipal;
 	}
-
-	/** Convertendo classe Endereco para classe EnderecoDto. */
+	
+	/**
+	 * Convertendo classe EnderecoDto para classe Endereco.
+	 *
+	 * @param Classe dto.
+	 * @return Uma classe do tipo Endereco.
+	 */
 	public static Endereco toEndereco(EnderecoDto dto) {
 		return new Endereco(
 				dto.getId(), 
@@ -93,8 +98,13 @@ public class EnderecoDto {
 				dto.getCidade(),
 				dto.getEnderecoPrincipal());
 	}
-
-	/** Convertendo classe EnderecoDto para classe Endereco. */
+	
+	/**
+	 * Convertendo entidade Endereco para classe EnderecoDto.
+	 *
+	 * @param Classe entidade.
+	 * @return Uma classe do tipo EnderecoDto.
+	 */
 	public static EnderecoDto fromEndereco(Endereco entity) {
 		return new EnderecoDto(
 				entity.getId(), 
@@ -106,8 +116,11 @@ public class EnderecoDto {
 	}
 
 	/**
-	 * Este método converte uma lista do objeto Endereco para uma lista de Enderecos
-	 * em Dto.
+	 * Este método converte uma lista do objeto EnderecoDto para uma 
+	 * lista da entidade Enderecos.
+	 *
+	 * @param Lista de Dto.
+	 * @return Uma lista do tipo Endereco.
 	 */
 	public static List<Endereco> toConvertList(List<EnderecoDto> enderecos) {
 		return enderecos
@@ -117,8 +130,11 @@ public class EnderecoDto {
 	}
 
 	/**
-	 * Este método converte uma lista do objeto EnderecoDto para uma lista de
-	 * Enderecos.
+	 * Este método converte uma lista do objeto Endereco para uma 
+	 * lista de Enderecos em Dto.
+	 *
+	 * @param Lista de entidade.
+	 * @return Uma lista do tipo Endereco.
 	 */
 	public static List<EnderecoDto> fromConvertList(List<Endereco> enderecos) {
 		return enderecos

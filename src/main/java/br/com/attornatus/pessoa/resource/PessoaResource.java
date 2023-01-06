@@ -44,5 +44,10 @@ public class PessoaResource {
 	public ResponseEntity<Object> consultarPessoa(@PathVariable(value = "id") Long id) {
 		return ResponseEntity.status(HttpStatus.OK).body(pessoaService.consultarPessoa(id));
 	}
+	
+	@PostMapping("/pessoa/endereco")
+	public ResponseEntity<Object> criarEnderecoPessoa(@RequestBody PessoaDto pessoaDto) {
+		return ResponseEntity.status(HttpStatus.CREATED).body(pessoaService.criarEnderecoPessoa(pessoaDto));		
+	}
 
 }

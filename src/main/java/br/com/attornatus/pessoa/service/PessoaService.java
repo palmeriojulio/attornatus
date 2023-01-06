@@ -20,7 +20,6 @@ public class PessoaService {
 		this.pessoaRepository = pessoaRepository;
 	}
 
-	// * Metódo que salva um registro na tabela pessoa. */
 	public PessoaDto criarPessoa(PessoaDto dto) {
 		try {
 			var pessoa = pessoaRepository.save(PessoaDto.toPessoa(dto));
@@ -31,7 +30,6 @@ public class PessoaService {
 		}
 	}
 
-	// * Metódo que edita um registro da tabela pessoa. */
 	public PessoaDto editarPessoa(PessoaDto dto) {		 
 		try {
 			var pessoa = pessoaRepository.save(PessoaDto.toPessoa(dto));
@@ -42,7 +40,6 @@ public class PessoaService {
 		}
 	}
 
-	// * Metódo que lista um registros da tabela pessoa. */
 	public PessoaDto consultarPessoa(Long id) {
 		try {
 			var pessoa = pessoaRepository.findById(id);
@@ -54,7 +51,6 @@ public class PessoaService {
 
 	}
 
-	// * Metódo que lista todas os registros da tabela pessoa. */
 	public List<PessoaDto> listarPessoas() {
 		try {
 			return pessoaRepository.findAll().stream().map(p -> PessoaDto.fromPessoa(p))
@@ -65,7 +61,6 @@ public class PessoaService {
 		}
 	}
 
-	// * Chama o método para converter o objeto Pessoa para o objeto PessoaDto */
 	private PessoaDto convertReturn(Pessoa pessoa) {
 		try {
 			if (Objects.nonNull(pessoa)) {
@@ -79,11 +74,26 @@ public class PessoaService {
 		}
 	}
 
-	// * Chama o método para converter o Optional para o objeto PessoaDto */
 	private PessoaDto convertOptionalReturn(Optional<Pessoa> pessoa) {
 		try {
 			if (pessoa.isPresent()) {
 				return PessoaDto.fromPessoa(pessoa.get());
+			} else {
+				return null;
+			}
+		} catch (RuntimeException e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+
+	public PessoaDto criarEnderecoPessoa(PessoaDto pessoaDto) {
+		var pessoa = consultarPessoa(pessoaDto.getId());
+		try {
+			if (pessoa.getId() == pessoaDto.getId()) {				
+				pessoa.getEnderecos().addAll(pessoaDto.getEnderecos());
+				pessoaRepository.save(PessoaDto.toPessoa(pessoa));
+				return (pessoa);
 			} else {
 				return null;
 			}

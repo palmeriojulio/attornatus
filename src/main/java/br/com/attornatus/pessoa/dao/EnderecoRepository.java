@@ -8,10 +8,11 @@ import br.com.attornatus.pessoa.domain.Endereco;
 /**
  * @author palmerio
  * 
- * Classe
+ * Esta classe extende a API do JpaRepository, interface para operações
+ * CRUD genéricas em um repositório para um tipo específico.
  *
  */
 @Repository
-public interface EnderecoRepository extends JpaRepository<Endereco, Long>{
+public interface EnderecoRepository extends JpaRepository<Endereco, Long> {
 
 }
