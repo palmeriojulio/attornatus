@@ -43,8 +43,7 @@ public class Endereco implements Serializable{
 		super();
 	}
 
-	public Endereco(Long id, String logradouro, String cep, String numero, String cidade, String enderecoPrincipal,
-			Pessoa pessoa) {
+	public Endereco(Long id, String logradouro, String cep, String numero, String cidade, String enderecoPrincipal) {
 		super();
 		this.id = id;
 		this.logradouro = logradouro;
@@ -52,7 +51,6 @@ public class Endereco implements Serializable{
 		this.numero = numero;
 		this.cidade = cidade;
 		this.enderecoPrincipal = enderecoPrincipal;
-		this.pessoa = pessoa;
 	}
 
 	public Long getId() {

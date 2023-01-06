@@ -20,14 +20,12 @@ public class EnderecoDto {
 	private String numero;
 	private String cidade;
 	private String enderecoPrincipal;
-	private PessoaDto pessoa;
 
 	public EnderecoDto() {
 		super();
 	}
 
-	public EnderecoDto(Long id, String logradouro, String cep, String numero, String cidade, String enderecoPrincipal,
-			PessoaDto pessoa) {
+	public EnderecoDto(Long id, String logradouro, String cep, String numero, String cidade, String enderecoPrincipal) {
 		super();
 		this.id = id;
 		this.logradouro = logradouro;
@@ -35,7 +33,6 @@ public class EnderecoDto {
 		this.numero = numero;
 		this.cidade = cidade;
 		this.enderecoPrincipal = enderecoPrincipal;
-		this.pessoa = pessoa;
 	}
 
 	public Long getId() {
@@ -86,24 +83,26 @@ public class EnderecoDto {
 		this.enderecoPrincipal = enderecoPrincipal;
 	}
 
-	public PessoaDto getPessoa() {
-		return pessoa;
-	}
-
-	public void setPessoa(PessoaDto pessoa) {
-		this.pessoa = pessoa;
-	}
-
 	/** Convertendo classe Endereco para classe EnderecoDto. */
 	public static Endereco toEndereco(EnderecoDto dto) {
-		return new Endereco(dto.getId(), dto.getLogradouro(), dto.getCep(), dto.getNumero(), dto.getCidade(),
-				dto.getEnderecoPrincipal(), PessoaDto.toPessoa(dto.getPessoa()));
+		return new Endereco(
+				dto.getId(), 
+				dto.getLogradouro(), 
+				dto.getCep(), 
+				dto.getNumero(), 
+				dto.getCidade(),
+				dto.getEnderecoPrincipal());
 	}
 
 	/** Convertendo classe EnderecoDto para classe Endereco. */
 	public static EnderecoDto fromEndereco(Endereco entity) {
-		return new EnderecoDto(entity.getId(), entity.getLogradouro(), entity.getCep(), entity.getNumero(),
-				entity.getCidade(), entity.getEnderecoPrincipal(), PessoaDto.fromPessoa(entity.getPessoa()));
+		return new EnderecoDto(
+				entity.getId(), 
+				entity.getLogradouro(), 
+				entity.getCep(), 
+				entity.getNumero(),
+				entity.getCidade(), 
+				entity.getEnderecoPrincipal());
 	}
 
 	/**
@@ -111,7 +110,10 @@ public class EnderecoDto {
 	 * em Dto.
 	 */
 	public static List<Endereco> toConvertList(List<EnderecoDto> enderecos) {
-		return enderecos.stream().map((e -> EnderecoDto.toEndereco(e))).collect(Collectors.toList());
+		return enderecos
+				.stream()
+				.map((e -> EnderecoDto.toEndereco(e)))
+				.collect(Collectors.toList());
 	}
 
 	/**
@@ -119,7 +121,10 @@ public class EnderecoDto {
 	 * Enderecos.
 	 */
 	public static List<EnderecoDto> fromConvertList(List<Endereco> enderecos) {
-		return enderecos.stream().map((e -> EnderecoDto.fromEndereco(e))).collect(Collectors.toList());
+		return enderecos
+				.stream()
+				.map((e -> EnderecoDto.fromEndereco(e)))
+				.collect(Collectors.toList());
 	}
 
 }

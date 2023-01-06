@@ -8,26 +8,26 @@ import br.com.attornatus.pessoa.domain.Pessoa;
 /**
  * @author palmerio
  * 
- *         Essa classe ultiliza o padrão de projetos Data Transfer Object (DTO)
- *         o transporte de dados entre diferentes componentes.
+ * Essa classe ultiliza o padrão de projetos Data Transfer Object (DTO)
+ * o transporte de dados entre diferentes componentes.
  * 
  */
 public class PessoaDto {
 
 	private Long id;
 	private String nome;
-	private LocalDate dataNascincimento;
+	private LocalDate dataNascimento;
 	private List<EnderecoDto> enderecos;
 
 	public PessoaDto() {
 		super();
 	}
 
-	public PessoaDto(Long id, String nome, LocalDate dataNascincimento, List<EnderecoDto> enderecos) {
+	public PessoaDto(Long id, String nome, LocalDate dataNascimento, List<EnderecoDto> enderecos) {
 		super();
 		this.id = id;
 		this.nome = nome;
-		this.dataNascincimento = dataNascincimento;
+		this.dataNascimento = dataNascimento;
 		this.enderecos = enderecos;
 	}
 
@@ -47,12 +47,12 @@ public class PessoaDto {
 		this.nome = nome;
 	}
 
-	public LocalDate getDataNascincimento() {
-		return dataNascincimento;
+	public LocalDate getDataNascimento() {
+		return dataNascimento;
 	}
 
-	public void setDataNascincimento(LocalDate dataNascincimento) {
-		this.dataNascincimento = dataNascincimento;
+	public void setDataNascimento(LocalDate dataNascimento) {
+		this.dataNascimento = dataNascimento;
 	}
 
 	public List<EnderecoDto> getEnderecos() {
@@ -63,17 +63,22 @@ public class PessoaDto {
 		this.enderecos = enderecos;
 	}
 
-	/** Convertendo o objeto Pessoa para objeto Dto */
+	/** Convertendo objeto PessoaDto para objeto Pessoa  */
 	public static Pessoa toPessoa(PessoaDto dto) {
-		return new Pessoa(dto.getId(), dto.getNome(), dto.getDataNascincimento(),
+		return new Pessoa(
+				dto.getId(), 
+				dto.getNome(), 
+				dto.getDataNascimento(),
 				EnderecoDto.toConvertList(dto.getEnderecos()));
 	}
 
-	/** Convertendo o objeto Dto para objeto Pessoa */
+	/** Convertendo o objeto Pessoa para objeto PessoaDto  */
 	public static PessoaDto fromPessoa(Pessoa entity) {
-		return new PessoaDto(entity.getId(), entity.getNome(), entity.getDataNascincimento(),
+		return new PessoaDto(
+				entity.getId(), 
+				entity.getNome(), 
+				entity.getDataNascincimento(),
 				EnderecoDto.fromConvertList(entity.getEnderecos()));
-
 	}
 
 }
