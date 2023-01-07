@@ -10,28 +10,34 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
 import jakarta.persistence.OneToMany;
 
 @Entity
-public class Pessoa implements Serializable{
+public class Pessoa implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "id_pessoa")
 	private Long id;
-	
+
 	@Column
 	private String nome;
-	
+
 	@Column
 	private LocalDate dataNascincimento;
-	
+
 	@OneToMany(cascade = CascadeType.ALL)
+	@JoinTable(name = "pessoa_endereco", 
+			joinColumns = { @JoinColumn(name = "id_pessoa") }, 
+			inverseJoinColumns = { @JoinColumn(name = "id_endereco") })
 	private List<Endereco> enderecos;
 
 	public Pessoa() {
-		super();		
+		super();
 	}
 
 	public Pessoa(Long id, String nome, LocalDate dataNascincimento, List<Endereco> enderecos) {

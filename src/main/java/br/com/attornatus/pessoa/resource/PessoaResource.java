@@ -49,5 +49,14 @@ public class PessoaResource {
 	public ResponseEntity<Object> criarEnderecoPessoa(@RequestBody PessoaDto pessoaDto) {
 		return ResponseEntity.status(HttpStatus.CREATED).body(pessoaService.criarEnderecoPessoa(pessoaDto));		
 	}
+	
+	@GetMapping("/pessoa/endereco/{id}")
+	public ResponseEntity<Object> listarEnderecosPessoaById(@PathVariable(value = "id") Long id) {
+		
+		if(pessoaService.listarEnderecosPessoaById(id).isEmpty()) {
+			return ResponseEntity.status(HttpStatus.CONFLICT).body("Pessoa ou endereco não cadastrados!");
+		}
+		return ResponseEntity.status(HttpStatus.OK).body(pessoaService.listarEnderecosPessoaById(id));		
+	}
 
 }

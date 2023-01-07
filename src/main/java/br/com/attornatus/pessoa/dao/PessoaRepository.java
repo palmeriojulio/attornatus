@@ -14,5 +14,6 @@ import br.com.attornatus.pessoa.domain.Pessoa;
  */
 @Repository
 public interface PessoaRepository extends JpaRepository<Pessoa, Long> {
+	
 
 }

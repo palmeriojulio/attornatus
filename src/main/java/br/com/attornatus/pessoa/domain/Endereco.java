@@ -4,11 +4,9 @@ import java.io.Serializable;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Endereco implements Serializable{
@@ -17,6 +15,7 @@ public class Endereco implements Serializable{
 	
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "id_endereco")
 	private Long id;
 	
 	@Column
@@ -33,10 +32,10 @@ public class Endereco implements Serializable{
 	
 	@Column
 	private String enderecoPrincipal;
-	
-	//@ManyToOne(fetch = FetchType.EAGER)
-	//@JoinColumn(name = "id_pessoa", referencedColumnName = "id")
-	//private Pessoa pessoa;
+//	
+//	@ManyToOne(fetch = FetchType.EAGER)
+//	@JoinColumn(name = "pessoa", referencedColumnName = "id")
+//	private Pessoa pessoa;
 	
 	public Endereco() {
 		super();

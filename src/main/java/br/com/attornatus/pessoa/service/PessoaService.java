@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 
 import br.com.attornatus.pessoa.dao.PessoaRepository;
+import br.com.attornatus.pessoa.domain.Endereco;
 import br.com.attornatus.pessoa.domain.Pessoa;
 import br.com.attornatus.pessoa.dto.PessoaDto;
 
@@ -97,6 +98,16 @@ public class PessoaService {
 			} else {
 				return null;
 			}
+		} catch (RuntimeException e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+
+	public List<Endereco> listarEnderecosPessoaById(Long id) {
+		try {
+			var pessoa = pessoaRepository.findById(id);
+			return pessoa.get().getEnderecos(); 
 		} catch (RuntimeException e) {
 			e.printStackTrace();
 			return null;
