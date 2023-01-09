@@ -41,7 +41,7 @@ Usando Spring boot, crie uma API simples para gerenciar Pessoas. Esta API deve p
  - :heavy_check_mark: Listar pessoas
  - :heavy_check_mark: Criar endereço para pessoa
  - :heavy_check_mark: Listar endereços da pessoa
- - Poder informar qual endereço é o principal da pessoa  
+ - :heavy_check_mark: Poder informar qual endereço é o principal da pessoa  
 
 Uma Pessoa deve ter os seguintes campos:  
 - Nome
