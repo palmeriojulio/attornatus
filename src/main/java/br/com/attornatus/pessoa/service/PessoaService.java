@@ -62,32 +62,13 @@ public class PessoaService {
 		}
 	}
 
-	private PessoaDto convertReturn(Pessoa pessoa) {
-		try {
-			if (Objects.nonNull(pessoa)) {
-				return PessoaDto.fromPessoa(pessoa);
-			} else {
-				return null;
-			}
-		} catch (RuntimeException e) {
-			e.printStackTrace();
-			return null;
-		}
-	}
-
-	private PessoaDto convertOptionalReturn(Optional<Pessoa> pessoa) {
-		try {
-			if (pessoa.isPresent()) {
-				return PessoaDto.fromPessoa(pessoa.get());
-			} else {
-				return null;
-			}
-		} catch (RuntimeException e) {
-			e.printStackTrace();
-			return null;
-		}
-	}
-
+	
+	/**
+	 * Cria um novo endereço para uma Pessoa.
+	 *
+	 * @param Dto.
+	 * @return Um dto do tipo PessoaDto.
+	 */
 	public PessoaDto criarEnderecoPessoa(PessoaDto pessoaDto) {
 		var pessoa = consultarPessoa(pessoaDto.getId());
 		try {
@@ -103,7 +84,13 @@ public class PessoaService {
 			return null;
 		}
 	}
-
+	
+	/**
+	 * Listar todos os endereços cadastrados de uma pessoa.
+	 *
+	 * @param Long.
+	 * @return Uma lista do tipo endereço.
+	 */
 	public List<Endereco> listarEnderecosPessoaById(Long id) {
 		try {
 			var pessoa = pessoaRepository.findById(id);
@@ -114,4 +101,29 @@ public class PessoaService {
 		}
 	}
 
+	private PessoaDto convertReturn(Pessoa pessoa) {
+		try {
+			if (Objects.nonNull(pessoa)) {
+				return PessoaDto.fromPessoa(pessoa);
+			} else {
+				return null;
+			}
+		} catch (RuntimeException e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
+	private PessoaDto convertOptionalReturn(Optional<Pessoa> pessoa) {
+		try {
+			if (pessoa.isPresent()) {
+				return PessoaDto.fromPessoa(pessoa.get());
+			} else {
+				return null;
+			}
+		} catch (RuntimeException e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
 }

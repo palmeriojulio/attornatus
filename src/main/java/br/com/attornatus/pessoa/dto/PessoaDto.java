@@ -62,8 +62,13 @@ public class PessoaDto {
 	public void setEnderecos(List<EnderecoDto> enderecos) {
 		this.enderecos = enderecos;
 	}
-
-	/** Convertendo objeto PessoaDto para objeto Pessoa  */
+	
+	/**
+	 * Convertendo objeto PessoaDto para objeto Pessoa.
+	 *
+	 * @param Dto.
+	 * @return Uma entidade do tipo Pessoa.
+	 */
 	public static Pessoa toPessoa(PessoaDto dto) {
 		return new Pessoa(
 				dto.getId(), 
@@ -72,7 +77,12 @@ public class PessoaDto {
 				EnderecoDto.toConvertList(dto.getEnderecos()));
 	}
 
-	/** Convertendo o objeto Pessoa para objeto PessoaDto  */
+	/**
+	 * Convertendo o objeto Pessoa para objeto PessoaDto.
+	 *
+	 * @param entidade Pessoa.
+	 * @return Uma PessoaDto.
+	 */
 	public static PessoaDto fromPessoa(Pessoa entity) {
 		return new PessoaDto(
 				entity.getId(), 

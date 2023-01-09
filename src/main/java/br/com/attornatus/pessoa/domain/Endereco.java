@@ -32,10 +32,6 @@ public class Endereco implements Serializable{
 	
 	@Column
 	private String enderecoPrincipal;
-//	
-//	@ManyToOne(fetch = FetchType.EAGER)
-//	@JoinColumn(name = "pessoa", referencedColumnName = "id")
-//	private Pessoa pessoa;
 	
 	public Endereco() {
 		super();
