@@ -19,14 +19,22 @@ A entrega deverá ser feita da seguinte forma:
 
 - Durante a implementação de uma nova funcionalidade de software solicitada, quais critérios você avalia e implementa para garantia de qualidade de software?
 
+	Funcionalidade, Usabilidade, Manutenibilidade, Confiabilidade e segurança.
 
 - Em qual etapa da implementação você considera a qualidade de software?
 
+	A garantir para a qualidade de um software é a utilização de um conjunto de métodos e técnicas
+	usados durante todo o processo de seu desenvolvimento,
 
+	
 ## Desafio Java
 
+<h4 align="center"> 
+    :construction:  Desafio em construção  :construction:
+</h4>
+
 Usando Spring boot, crie uma API simples para gerenciar Pessoas. Esta API deve permitir:  
-- Criar uma pessoa
+  :heavy_check_mark: Criar uma pessoa Ok
 - Editar uma pessoa
 - Consultar uma pessoa
 - Listar pessoas
@@ -44,15 +52,15 @@ Uma Pessoa deve ter os seguintes campos:
     - Cidade
 
 ## Requisitos  
-- Todas as respostas da API devem ser JSON  
-- Banco de dados H2
+	Todas as respostas da API devem ser JSON.  
+	Banco de dados H2.
 
 ## Diferencial
-- Testes
-- Clean Code
+	Testes.
+	Clean Code.
  
 ## Será levado em avaliação 
-- Estrutura, arquitetura e organização do projeto  
-- Boas práticas de programação  
-- Alcance dos objetivos propostos.
+	- Estrutura, arquitetura e organização do projeto. 
+	- Boas práticas de programação.
+	- Alcance dos objetivos propostos.
 

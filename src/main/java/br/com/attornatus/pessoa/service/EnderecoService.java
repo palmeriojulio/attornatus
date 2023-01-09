@@ -17,8 +17,8 @@ public class EnderecoService {
 	}
 
 	public Object listarEnderecosPessoaById(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		var endereco = enderecoRepository.listarEnderecosPessoaById(id);
+		return endereco;
 	}
 
 }
