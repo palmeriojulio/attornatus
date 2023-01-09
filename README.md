@@ -29,18 +29,19 @@ A entrega deverá ser feita da seguinte forma:
 	
 ## Desafio Java
 
-<h4 align="center"> 
+<h3 align="center"> 
     :construction:  Desafio em construção  :construction:
-</h4>
+</h3>
 
 Usando Spring boot, crie uma API simples para gerenciar Pessoas. Esta API deve permitir:  
-  :heavy_check_mark: Criar uma pessoa Ok
-- Editar uma pessoa
-- Consultar uma pessoa
-- Listar pessoas
-- Criar endereço para pessoa
-- Listar endereços da pessoa
-- Poder informar qual endereço é o principal da pessoa  
+
+:heavy_check_mark: - Criar uma pessoa Ok
+:heavy_check_mark: - Editar uma pessoa
+:heavy_check_mark: - Consultar uma pessoa
+:heavy_check_mark: - Listar pessoas
+:heavy_check_mark: - Criar endereço para pessoa
+:heavy_check_mark: - Listar endereços da pessoa
+:heavy_check_mark: - Poder informar qual endereço é o principal da pessoa  
 
 Uma Pessoa deve ter os seguintes campos:  
 - Nome
