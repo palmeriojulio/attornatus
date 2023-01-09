@@ -35,7 +35,7 @@ A entrega deverá ser feita da seguinte forma:
 
 Usando Spring boot, crie uma API simples para gerenciar Pessoas. Esta API deve permitir:  
 
-:heavy_check_mark: - Criar uma pessoa Ok
+ - :heavy_check_mark: Criar uma pessoa Ok
 :heavy_check_mark: - Editar uma pessoa
 :heavy_check_mark: - Consultar uma pessoa
 :heavy_check_mark: - Listar pessoas
