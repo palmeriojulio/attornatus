@@ -1,5 +1,6 @@
 package br.com.attornatus.pessoa.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -43,7 +44,6 @@ public class PessoaService {
 	public PessoaDto consultarPessoa(Long id) {
 		try {
 			var pessoa = pessoaRepository.findById(id);
-
 			return convertOptionalReturn(pessoa);
 		} catch (RuntimeException e) {
 			throw new AttornatusException("Pessoa de id: " + id + ", não encontrada!");
@@ -52,11 +52,16 @@ public class PessoaService {
 	}
 
 	public List<PessoaDto> listarPessoas() {
+		List<PessoaDto> pessoas = new ArrayList<PessoaDto>();
 		try {
-			return pessoaRepository.findAll().stream().map(p -> PessoaDto.fromPessoa(p))
-					.sorted((p1, p2) -> p1.getId().compareTo(p2.getId())).collect(Collectors.toList());
+			pessoas = pessoaRepository.findAll().stream().map(p -> PessoaDto.fromPessoa(p))
+					.sorted((p1, p2) -> p1.getId().compareTo(p2.getId())).collect(Collectors.toList()); 
+			if (pessoas.isEmpty()) {
+				throw new AttornatusException("Não existem pessoas cadastradas!");
+			} 			
+			return pessoas;				
 		} catch (RuntimeException e) {
-			throw new AttornatusException("Nenhuma pessoa encontrada!");
+			throw new AttornatusException(e.getMessage());
 		}
 	}
 
