@@ -15,7 +15,7 @@ A entrega deverá ser feita da seguinte forma:
 - Opcionalmente, caso você consiga fazer o build da aplicação, poderá também informar o link de acesso
 
 
-## Qualidade de código
+### Qualidade de código
 
 - Durante a implementação de uma nova funcionalidade de software solicitada, quais critérios você avalia e implementa para garantia de qualidade de software?
 
@@ -27,17 +27,17 @@ A entrega deverá ser feita da seguinte forma:
 	usados durante todo o processo de seu desenvolvimento,
 
 	
-## Desafio Java
+### Desafio Java
 
 Usando Spring boot, crie uma API simples para gerenciar Pessoas. Esta API deve permitir:  
 
- - :heavy_check_mark: Criar uma pessoa
- - :heavy_check_mark: Editar uma pessoa
- - :heavy_check_mark: Consultar uma pessoa
- - :heavy_check_mark: Listar pessoas
- - :heavy_check_mark: Criar endereço para pessoa
- - :heavy_check_mark: Listar endereços da pessoa
- - :heavy_check_mark: Poder informar qual endereço é o principal da pessoa  
+ - [x] Criar uma pessoa
+ - [x] Editar uma pessoa
+ - [x] Consultar uma pessoa
+ - [x] Listar pessoas
+ - [x] Criar endereço para pessoa
+ - [x] Listar endereços da pessoa
+ - [x] Poder informar qual endereço é o principal da pessoa  
 
 Uma Pessoa deve ter os seguintes campos:  
 - Nome
@@ -48,31 +48,32 @@ Uma Pessoa deve ter os seguintes campos:
     - Número
     - Cidade
 
-## Requisitos  
+### Requisitos  
 	Todas as respostas da API devem ser JSON.  
 	Banco de dados H2.
 
-## Diferencial
+### Diferencial
 	Testes.
 	Clean Code.
  
-## Será levado em avaliação 
+### Será levado em avaliação 
 	Estrutura, arquitetura e organização do projeto. 
 	Boas práticas de programação.
 	Alcance dos objetivos propostos.
 
 
-##Build da aplicação em nuvem
+### Build da aplicação em nuvem
 
  O projeto foi buildado na plataforma de serviço <http://railway.app> baseado em nuvem, com o banco de dados Mysql.
  
-	Endpoints:
+Endpoints:
 	
-	POST - Cadastrar pessoa - https://attornatus-production.up.railway.app/gerenciar/pessoa
-	PUT  - Editar pessoa    - https://attornatus-production.up.railway.app/gerenciar/pessoa
-	GET  - Litas pessoas    - https://attornatus-production.up.railway.app/gerenciar/pessoas
-	GET  - Consultar pessoa - https://attornatus-production.up.railway.app/gerenciar/pessoa/{id}
-	POST - Criar endereço   - https://attornatus-production.up.railway.app/gerenciar/pessoa/endereco
-	GET  - Listar endereços - https://attornatus-production.up.railway.app/gerenciar/pessoa/endereco/{id}
-	
+- POST - Cadastrar pessoa - https://attornatus-production.up.railway.app/gerenciar/pessoa
+- PUT  - Editar pessoa    - https://attornatus-production.up.railway.app/gerenciar/pessoa
+- GET  - Litas pessoas    - https://attornatus-production.up.railway.app/gerenciar/pessoas
+- GET  - Consultar pessoa - https://attornatus-production.up.railway.app/gerenciar/pessoa/{id}
+- POST - Criar endereço   - https://attornatus-production.up.railway.app/gerenciar/pessoa/endereco
+- GET  - Listar endereços - https://attornatus-production.up.railway.app/gerenciar/pessoa/endereco/{id}
+
+
 	
