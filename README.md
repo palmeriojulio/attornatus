@@ -29,13 +29,9 @@ A entrega deverá ser feita da seguinte forma:
 	
 ## Desafio Java
 
-<h3 align="center"> 
-    :construction:  Desafio em construção  :construction:
-</h3>
-
 Usando Spring boot, crie uma API simples para gerenciar Pessoas. Esta API deve permitir:  
 
- - :heavy_check_mark: Criar uma pessoa Ok
+ - :heavy_check_mark: Criar uma pessoa
  - :heavy_check_mark: Editar uma pessoa
  - :heavy_check_mark: Consultar uma pessoa
  - :heavy_check_mark: Listar pessoas
@@ -65,3 +61,18 @@ Uma Pessoa deve ter os seguintes campos:
 	Boas práticas de programação.
 	Alcance dos objetivos propostos.
 
+
+##Build da aplicação em nuvem
+
+ O projeto foi buildado na plataforma de serviço <http://railway.app> baseado em nuvem, com o banco de dados Mysql.
+ 
+	Endpoints:
+	
+	POST - Cadastrar pessoa - https://attornatus-production.up.railway.app/gerenciar/pessoa
+	PUT  - Editar pessoa    - https://attornatus-production.up.railway.app/gerenciar/pessoa
+	GET  - Litas pessoas    - https://attornatus-production.up.railway.app/gerenciar/pessoas
+	GET  - Consultar pessoa - https://attornatus-production.up.railway.app/gerenciar/pessoa/{id}
+	POST - Criar endereço   - https://attornatus-production.up.railway.app/gerenciar/pessoa/endereco
+	GET  - Listar endereços - https://attornatus-production.up.railway.app/gerenciar/pessoa/endereco/{id}
+	
+	
