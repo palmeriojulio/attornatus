@@ -64,7 +64,7 @@ Uma Pessoa deve ter os seguintes campos:
 
 ### Build da aplicação em nuvem
 
- O projeto foi buildado na plataforma de serviço <http://railway.app> baseado em nuvem, com o banco de dados Mysql.
+ O projeto está na plataforma de serviço <http://railway.app> baseado em nuvem, com o banco de dados Mysql.
  
 Endpoints:
 	
